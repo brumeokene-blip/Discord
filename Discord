@@ -2,7 +2,7 @@ local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 local player = Players.LocalPlayer
 
-local advertiseLink = "https://pastebin.com/raw/rC4S07Ut"
+local advertiseLink = "https://discord.gg/59ZmxCSwu"
 
 local success, err = pcall(function()
     if setclipboard then
