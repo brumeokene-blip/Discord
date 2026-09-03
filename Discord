@@ -1,0 +1,29 @@
+local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
+local player = Players.LocalPlayer
+
+local advertiseLink = "https://pastebin.com/raw/rC4S07Ut"
+
+local success, err = pcall(function()
+    if setclipboard then
+        setclipboard(advertiseLink)
+    elseif writeclipboard then
+        writeclipboard(advertiseLink)
+    else
+        local clipboard = game:GetService("ClipboardService")
+        if clipboard then
+            clipboard:SetText(advertiseLink)
+        end
+    end
+end)
+
+pcall(function()
+    StarterGui:SetCore("SendNotification", {
+        Title = "Link Copied",
+        Text = "Paste it somewhere",
+        Duration = 4
+    })
+end)
+
+task.wait(0.3)
+player:Kick("join the link for script")
